@@ -1,0 +1,29 @@
+query ($slug: String!) {
+  organization(login: $slug) {
+    name
+    auditLog(first: 25) {
+      edges {
+        node {
+          ... on AuditEntry {
+            actorResourcePath
+            action
+            actorIp
+            actorLogin
+            createdAt
+            actorLocation {
+              countryCode
+              country
+              regionCode
+              region
+              city
+            }
+          }
+        }
+      }
+      pageInfo {
+        hasNextPage
+        endCursor
+      }
+    }
+  }
+}
