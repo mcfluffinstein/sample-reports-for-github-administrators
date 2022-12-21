@@ -1,5 +1,13 @@
 #!/bin/bash
 
+# If user passes argument $1 use that as the repo name
+if [ -z "$1" ]
+  then
+    repo=$repo
+  else
+    repo=$1
+fi
+
 # First, let's set the variables for the organization, repository, and access token
 ORG=
 REPO=
