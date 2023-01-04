@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # This script can be used to report on member commits for repos in an org using the GitHub API
 # Requires the GitHub CLI: https://github.com/cli/cli
 
