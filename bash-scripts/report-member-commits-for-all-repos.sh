@@ -38,7 +38,7 @@ while read -r repo; do
 done < tmp/org-repos.txt
 
 # Remove the temporary files
-rm tmp/org-members.txt
-rm tmp/org-repos.txt
+rm tmp/members.txt
+rm tmp/repos.txt
 
 echo "Done!"
