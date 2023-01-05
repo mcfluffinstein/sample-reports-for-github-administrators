@@ -3,14 +3,24 @@
 # If user passes argument $1 use that as the repo name
 if [ -z "$1" ]
   then
-    repo=$repo
+    org=$org
   else
-    repo=$1
+    org=$1
 fi
 
-# First, let's set the variables for the organization, repository, and access token
-ORG=
-REPO=
+# If user passes argument $2 use that as the org
+if [ -z "$2" ]
+  then
+    repo=$repo
+  else
+    repo=$2
+fi
+
+# First, let's set the variables for the organization and repository if $1 and $2 are not passed
+ORG=github
+REPO=github
+
+# Paste an access token with sufficient permissions (admin:org)
 GITHUB_TOKEN=
 
 # We'll then set the headers for the CSV file
