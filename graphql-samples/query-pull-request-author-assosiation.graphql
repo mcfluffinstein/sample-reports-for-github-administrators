@@ -1,0 +1,10 @@
+query ($org: String!, $repo:String!, $pull: Int!) {
+  repository(name: $repo, owner: $org) {
+    pullRequest(number: $pull) {
+      authorAssociation
+      author {
+        login
+      }
+    }
+  }
+}
