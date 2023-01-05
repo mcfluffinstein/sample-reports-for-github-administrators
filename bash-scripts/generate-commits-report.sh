@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# This script can be used to report on member commits for repos in an org using the GitHub API
+# This script generates a report in csv format which shows the total commits for each user per repo
 # Requires the GitHub CLI: https://github.com/cli/cli
 
 # If $1 is passed use as org
