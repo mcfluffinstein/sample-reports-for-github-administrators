@@ -19,6 +19,7 @@ gh api --paginate /orgs/${org}/members| jq '.[].login' >> tmp/members-list.txt
 
 # Read the members list and make a request for each member
 while read -r member; do
+    echo 'Getting latest commit for: '$member'...'
     # Make a GET request to the GitHub API to get the latest commit by the member
     result=$(gh api -X GET --paginate search/commits -f q="author:$member sort:author-date" | jq '.items[0]')
     # Get the commit sha
