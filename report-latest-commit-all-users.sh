@@ -12,7 +12,7 @@ if [ -z "$1" ]
 fi
 
 # Write the headers to the CSV file
-echo "Organization,Username,Latest Commit SHA,Date" > results.csv
+echo "Organization,Username,Latest Commit SHA,Commit URL,Date" > results.csv
 
 # Get a list of org members and repos. Save to files.
 gh api --paginate /orgs/${org}/members| jq '.[].login' >> tmp/members-list.txt
